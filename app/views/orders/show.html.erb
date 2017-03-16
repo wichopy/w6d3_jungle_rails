@@ -19,7 +19,7 @@
           <th>totals</th>
         </tr>
 
-          <%= @order.line_items.includes(:product).each do |i| %>
+          <% @order.line_items.includes(:product).each do |i| %>
         <tr>
           <td>
             <img src="<%= i.product.image %>" width = "100" height = "100">
