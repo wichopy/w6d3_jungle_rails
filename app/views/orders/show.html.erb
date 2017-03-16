@@ -9,8 +9,8 @@
     <h4> Here is your order summary : </h>
     <p class="email"> <%= @order.email %> </p>
     <p class="total price"> <%= humanized_money_with_symbol @order.total_cents %> </p>
+    
     <div class="line-items">
-
       <table style="width:100%" class="table-bordered">
         <tr>
           <th>picture</th>
@@ -33,7 +33,7 @@
           <td> <%= humanized_money_with_symbol i.item_price_cents %> </td>
         </tr>
           <% end %> 
-          
+<%= console %>
       </table>
     </div>
   </div>
