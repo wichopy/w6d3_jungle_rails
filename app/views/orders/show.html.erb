@@ -6,16 +6,38 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <h4> Here is your order summary : </h>
+    <p class="email"> <%= @order.email %> </p>
+    <p class="total price"> <%= humanized_money_with_symbol @order.total_cents %> </p>
     <div class="line-items">
-      <%#<%= render @order %>
-      <%= @order.line_items.includes(:product).each do |i| %>
-        <img src="<%= i.product.image %>">
-        <p> <%= i.item_price_cents %> </p>
-      <% end %> 
-      
+
+      <table style="width:100%" class="table-bordered">
+        <tr>
+          <th>picture</th>
+          <th>Name - Description</th> 
+          <th>qty</th>
+          <th>totals</th>
+        </tr>
+
+          <%= @order.line_items.includes(:product).each do |i| %>
+        <tr>
+          <td>
+            <img src="<%= i.product.image %>" width = "100" height = "100">
+          </td>
+          <td> 
+            <p><u> <%= i.product.name %></u> </p>
+            <p><%= i.product.description %> </p> 
+          </td>
+         
+          <td> <%= i.quantity %> </td>
+          <td> <%= humanized_money_with_symbol i.item_price_cents %> </td>
+        </tr>
+          <% end %> 
+          
+      </table>
     </div>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-<%= console %>
+
 </section>
