@@ -20,6 +20,9 @@ unless Rails.env.development?
 end
 
 # Let's do this ...
+## USERS
+
+u1 = User.create!({name:"Will", password:"password"})
 
 ## CATEGORIES
 
@@ -132,5 +135,31 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+##Lets make some reviews
 
+r1 = Rating.create!({
+  rating: 1,
+  description: "I dont like it",
+  user_id: 1,
+  product_id: 1
+})
+
+r2 = Rating.create!({
+  rating: 2,
+  description: "I dont like it",
+  user_id: 1,
+  product_id: 2
+})
+r3 = Rating.create!({
+  rating: 1,
+  description: "I dont like it",
+  user_id: 1,
+  product_id: 3
+})
+r4 = Rating.create!({
+  rating: 1,
+  description: "I dont like it",
+  user_id: 1,
+  product_id: 4
+})
 puts "DONE!"
