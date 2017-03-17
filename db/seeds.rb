@@ -139,15 +139,15 @@ cat3.products.create!({
 ##Lets make some reviews
 
 r13 = Rating.create!({
-  rating: 1,
-  description: "I dont like it",
+  rating:  Faker::Number.between(1,5),
+  description: Faker::LordOfTheRings.paragraph(4),
   user_id: 1,
   product_id: 1
 })
 
 r10 = Rating.create!({
-  rating: 3,
-  description: "sucks",
+  rating: Faker::Number.between(1,5),
+  description: Faker::LordOfTheRings.paragraph(4),
   user_id: 3,
   product_id: 1
 })

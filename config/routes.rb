@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show]
 
+  #POST for reviews
+  resources :products do
+    resources :ratings, only: [:create]
+  end
+
   #Vanilla login routes.
   # These routes will be for signup. The first renders a form in the browse, the second will 
   # receive the form and create a user in our database using the data given to us by the user.
