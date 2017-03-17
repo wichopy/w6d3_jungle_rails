@@ -23,7 +23,8 @@ end
 ## USERS
 
 u1 = User.create!({name:"Will", password:"password"})
-
+u2 = User.create!({name:"Mary", password:"password"})
+u3 = User.create!({name:"Jane", password:"password"})
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -137,8 +138,29 @@ cat3.products.create!({
 
 ##Lets make some reviews
 
-r1 = Rating.create!({
+r13 = Rating.create!({
   rating: 1,
+  description: "I dont like it",
+  user_id: 1,
+  product_id: 1
+})
+
+r10 = Rating.create!({
+  rating: 3,
+  description: "sucks",
+  user_id: 3,
+  product_id: 1
+})
+
+r11 = Rating.create!({
+  rating: 4,
+  description: "I dont like it",
+  user_id: 2,
+  product_id: 1
+})
+
+r12 = Rating.create!({
+  rating: 5,
   description: "I dont like it",
   user_id: 1,
   product_id: 1
