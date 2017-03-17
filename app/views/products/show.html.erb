@@ -29,14 +29,16 @@
       <div class="col-sm-4"></div>
       <div class="product-rating col-sm-8">
         <div class= "row">
-        <h3> Reviews! </h3>
+        <h3 class="title"> What others have to say about this product </h3>
         <% @product.ratings.each do |r| %>
-          <p> <b>User:</b> <%= r.user.name %> <b>Rating:</b> <%= r.rating %> <b>Date Reviewed</b> <%= r.created_at %></p>
-          <p> <b>Description:</b> <%= r.description %> </p>
+          <div class= "well">
+            <p> <b>User:</b> <%= r.user.name %> <b>Rating:</b> <%= r.rating %> <b>Date Reviewed</b> <%= r.created_at %></p>
+            <p> <b>Description:</b> <%= r.description %> </p>
+          </div>
         <% end %>
         </div>
         <% if current_user %>
-          <div class="row">
+          <div class="row well">
             <%= form_for [@product, @rating] do |f| %>
               
               <% if f.object.errors.any? %>
@@ -51,7 +53,8 @@
               <% end %>
               <div class="form-group">
                 <%= f.label :rating %>
-                <%= f.number_field :rating, class: 'form-control' %>
+                <%= f.select :rating, options_for_select([[1], [2], [3], [4], [5]]), class: 'form-control' %> 
+                <%#<%= f.number_field :rating, class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= f.label :description %>
