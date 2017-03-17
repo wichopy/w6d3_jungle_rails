@@ -30,7 +30,7 @@
       <div class="product-rating col-sm-8">
         <div class= "row">
         <h3 class="title"> What others have to say about this product </h3>
-        <% @product.ratings.each do |r| %>
+        <% @product.ratings.reverse_each do |r| %>
           <div class= "well">
             <p> <b>User:</b> <%= r.user.name %> <b>Rating:</b> <%= r.rating %> <b>Date Reviewed</b> <%= r.created_at %></p>
             <p> <b>Description:</b> <%= r.description %> </p>

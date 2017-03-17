@@ -1,4 +1,7 @@
 class RatingsController < ApplicationController
+
+  before_filter :authorize
+
   def new
     @rating = Rating.new
   end
@@ -8,7 +11,7 @@ class RatingsController < ApplicationController
     @rating.user_id = current_user.id
     @rating.product_id = product_id_grab
     if @rating.save
-      redirect_to [:products], notice: 'Product created!'
+      redirect_to controller: 'products', id: product_id_grab, action: 'show', notice: 'Product created!'
     else
       render :new
     end
@@ -27,7 +30,4 @@ class RatingsController < ApplicationController
     params.require(:product_id)
   end
 
-  def user_id_grab
-    current_user.id
-  end
 end
