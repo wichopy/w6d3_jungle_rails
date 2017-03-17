@@ -6,6 +6,12 @@ class RatingsController < ApplicationController
     @rating = Rating.new
   end
 
+  def destroy 
+    @rating = Rating.find(params[:id])
+    @rating.destroy
+    redirect_to controller: 'products', id: product_id_grab, action: 'show', notice: 'Rating Deleted!'
+  end
+
   def create
     @rating = Rating.new(rating_params)
     @rating.user_id = current_user.id

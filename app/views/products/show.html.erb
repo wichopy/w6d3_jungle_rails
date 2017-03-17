@@ -34,6 +34,12 @@
           <div class= "well">
             <p> <b>User:</b> <%= r.user.name %> <b>Rating:</b> <%= r.rating %> <b>Date Reviewed</b> <%= r.created_at %></p>
             <p> <b>Description:</b> <%= r.description %> </p>
+            <button class="btn btn-danger delete">    
+              <%= link_to 'Delete', [@product, r],
+              :method => :delete,
+              data: { confirm: 'Are you sure?' }
+              %> 
+            </button>
           </div>
         <% end %>
         </div>

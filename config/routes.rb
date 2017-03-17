@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   #POST for reviews
   resources :products do
-    resources :ratings, only: [:create]
+    resources :ratings, only: [:create, :destroy]
   end
 
   #Vanilla login routes.
