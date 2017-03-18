@@ -140,14 +140,14 @@ cat3.products.create!({
 
 r13 = Rating.create!({
   rating:  Faker::Number.between(1,5),
-  description: Faker::LordOfTheRings.paragraph(4),
+  description: Faker::Hipster.paragraph(4),
   user_id: 1,
   product_id: 1
 })
 
 r10 = Rating.create!({
   rating: Faker::Number.between(1,5),
-  description: Faker::LordOfTheRings.paragraph(4),
+  description: Faker::Hipster.paragraph(4),
   user_id: 3,
   product_id: 1
 })
