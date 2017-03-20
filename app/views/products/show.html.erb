@@ -21,6 +21,8 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Avg. Rating</dt>
+          <dd><%= @product.ratings.average(:rating) ? @product.ratings.average(:rating) : "No reviews found" %></dd>
         </dl>
       </div>
     </div>
