@@ -10,7 +10,7 @@
   </p>
   <span> 
     <b> Avg. Rating: </b>
-    <%= product.ratings.average(:rating) ? product.ratings.average(:rating) : "No ratings found" %>
+    <%= product.ratings.average(:rating) ? product.ratings.average(:rating).round(2) : "No ratings found" %>
   </span>
   <footer class="actions">
     <%= link_to add_item_cart_path(product_id: product.id), class: 'btn btn-primary', method: :put do %>
