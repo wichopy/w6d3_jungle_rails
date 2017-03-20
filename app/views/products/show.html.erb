@@ -22,7 +22,7 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
           <dt>Avg. Rating</dt>
-          <dd><%= @product.ratings.average(:rating) ? @product.ratings.average(:rating) : "No reviews found" %></dd>
+          <dd><%= @product.ratings.average(:rating) ? @product.ratings.average(:rating).round(2) : "No reviews found" %></dd>
         </dl>
       </div>
     </div>
@@ -77,3 +77,4 @@
   </article>
 
 </section>
+
