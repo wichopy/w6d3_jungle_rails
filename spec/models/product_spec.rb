@@ -7,7 +7,7 @@ RSpec.describe Product, type: :model do
     before do
       @category = Category.create({name: "Books"})
     end
-    
+
     it "Product's name should exist" do
       # product_name = @product.save
       product = @category.products.create({
