@@ -22,9 +22,9 @@ end
 # Let's do this ...
 ## USERS
 
-u1 = User.create!({name:"Will", password:"password"})
-u2 = User.create!({name:"Mary", password:"password"})
-u3 = User.create!({name:"Jane", password:"password"})
+u1 = User.create!({name:"Will", password:"password", email: 'will@email.com'})
+u3 = User.create!({name:"Jane", password:"password", email: 'jane@email.com'})
+u2 = User.create!({name:"Mary", password:"password", email: 'mary@email.com'})
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."

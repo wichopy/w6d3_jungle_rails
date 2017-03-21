@@ -1,14 +1,14 @@
-Hey <%= @order.email %>,
+Hey most valued customer of Jungle,
 
 Here's your order!
 
 Order ID: <%= @order.id %>
 
-Total: <%= humanized_money_with_symbol @order.total_cents %>
-Stripe ID: <%= @order.stripe_charge_id %>
+Your order is as follows:
 
-Order list:
-<%= @order.line_items.includes(:product).each do |i| %>
+<% @order.line_items.includes(:product).each do |i| %>
   - <%= i.product.name %> - <%= i.product.description %> - <%= i.quantity %> - <%= humanized_money_with_symbol i.item_price_cents %>
 <% end %> 
+Total: <%= humanized_money_with_symbol @order.total_cents %>
+
 Have a great day!
